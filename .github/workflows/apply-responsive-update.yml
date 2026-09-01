@@ -1,0 +1,30 @@
+name: Apply responsive site update
+
+on:
+  push:
+    paths:
+      - ".github/workflows/apply-responsive-update.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild responsive index
+        run: |
+          base64 -d .github/roman-v20.patch.zst.b64 > /tmp/roman-v20.patch.zst
+          zstd -d --patch-from=index.html /tmp/roman-v20.patch.zst -o /tmp/index.v20.html
+          test "$(sha256sum /tmp/index.v20.html | cut -d' ' -f1)" = "9a983f427197079b0dda9473afaed0e30cab7d5117f57baa630e2bef77c290b5"
+          mv /tmp/index.v20.html index.html
+          rm .github/roman-v20.patch.zst.b64
+          rm .github/workflows/apply-responsive-update.yml
+      - name: Publish update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add responsive mobile layout"
+          git push
