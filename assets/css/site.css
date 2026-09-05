@@ -29,7 +29,7 @@ footer{padding:34px 0;color:#aaa;font-size:13px} .foot{display:flex;gap:24px;jus
 .duo-section{margin-top:36px;padding-top:30px;border-top:1px solid var(--line)}
 .duo-title{font-family:Georgia,serif;font-size:30px;margin:0 0 8px}.duo-lead{color:var(--muted);max-width:800px;margin:0 0 22px}
 .duo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.duo-card{border:1px solid var(--line);background:#111417;overflow:hidden}.duo-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.duo-card .duo-copy{padding:18px 20px 20px;background:#0d1012;border-top:1px solid var(--line);text-align:center}.duo-card h4{font:24px Georgia,serif;margin:0 0 5px;color:var(--gold);font-weight:400}.duo-card p{margin:0;color:#e7e1d8;font-size:15px}
-.contact-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0f1214}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}.contact-name{font:34px Georgia,serif;margin:4px 0 14px}.contact-list{font-size:18px}.contact-list a{color:var(--gold);border-bottom:1px solid rgba(201,161,93,.35)}
+.contact-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0f1214}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}.contact-name{font:34px Georgia,serif;margin:4px 0 14px}.contact-list{font-size:18px}.contact-value{color:var(--gold);user-select:text}
 @media(max-width:800px){.duo-grid,.contact-grid{grid-template-columns:1fr}}
 @media(max-width:800px){.theatre-collab>div{grid-template-columns:1fr!important}}
 
@@ -277,13 +277,12 @@ footer{padding:34px 0;color:#aaa;font-size:13px} .foot{display:flex;gap:24px;jus
 
 .slava-story{margin-top:28px;border:1px solid var(--line);background:#111417;display:grid;grid-template-columns:.7fr 1.3fr;overflow:hidden;align-items:start}
 .slava-story img{width:100%;height:auto;max-height:520px;object-fit:contain;object-position:center top;background:#090b0c;display:block}
+.slava-photos{display:grid;align-content:start;gap:10px;background:#090b0c}
 .slava-copy{padding:34px}.slava-copy h3{font-size:36px;font-weight:300;margin:6px 0 14px}
 .slava-quote{font-family:Georgia,serif;font-size:25px;line-height:1.35;color:#fff;border-left:3px solid var(--gold);padding-left:18px;margin:22px 0}
 .slava-small{color:var(--muted)}
-.slava-story .slava-inline-photo{float:right;width:260px;max-width:42%;height:auto;max-height:none;object-fit:cover;margin:2px 0 18px 24px;border:1px solid var(--line);background:#090b0c}
-.slava-copy .actions{clear:both}
+.slava-story .slava-inline-photo{max-height:none;border-top:1px solid var(--line)}
 @media(max-width:800px){.slava-story{grid-template-columns:1fr}.slava-story img{max-height:none;width:100%;height:auto;object-fit:contain}}
-@media(max-width:620px){.slava-story .slava-inline-photo{float:none;width:min(100%,320px);max-width:100%;margin:18px auto 22px}}
 
 /* V20: full responsive layout for phones and tablets */
 html,body{max-width:100%;overflow-x:hidden}
